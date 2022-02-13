@@ -1,14 +1,15 @@
-from collections import deque
-
+# 11866 - 요세푸스 문제 0
 # n명의 사람 중 k번째 사람 제거 => 모두 제거될 때까지 제거 반복
 
-n, k = map(int, input().split())
+from collections import deque
+
+n, k = map(int, input().split())        # test case: n = 7, k = 3
 queue = deque(list(range(1, n + 1)))
 
 print('<', end="")
 
 for i in range(n - 1):
-    queue.rotate(-(k - 1))              # 2회 왼쪽으로 회전
+    queue.rotate(-(k - 1))              # 왼쪽으로 2회 회전
     print(queue.popleft(), end=", ")
 
     '''
